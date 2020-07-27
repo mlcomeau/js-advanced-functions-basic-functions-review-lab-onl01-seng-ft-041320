@@ -14,4 +14,14 @@ function wrapAdjective(wrapper = "*") {
     };
   };
 
-  
+const Calculator = {
+  add: (a, b) => a + b,
+  subtract: (a, b) => a - b,
+  multiply: (a, b) => a * b,
+  divide: (a, b) => a / b
+};
+
+function actionApplyer(num, arrOfFuncs) {
+  let total = arrOfFuncs.reduce((sum, func) => func(num), 0);
+  return arrOfFuncs.length == 0 ? num : total - (arrOfFuncs.length - 1);
+}
